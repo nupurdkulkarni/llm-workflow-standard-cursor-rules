@@ -1,0 +1,11 @@
+---
+description: Type safety and static analysis requirements.
+globs: **/*.py, **/*.ipynb
+---
+
+# Type Hints and Typing
+
+- **Mandatory**: All functions must have type hints for args and return.
+- **Syntax**: Use `list[str]` not `List[str]`.
+- **Validation**: Ensure type hints align with any existing Pydantic models.
+- **Self**: Use `from typing import Self` for chainable/factory methods.

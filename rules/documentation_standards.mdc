@@ -1,0 +1,15 @@
+---
+description: Standards for technical documentation and Markdown files.
+globs: **/*.md, docs/**/*
+---
+
+# Documentation Standards
+
+- **Tone**: Technical, objective, and concise. Avoid marketing "fluff" or conversational fillers.
+- **Structure**: 
+  - Use clear header hierarchies (`#`, `##`, `###`).
+  - Use Bullet points for lists to improve scannability.
+- **Code Blocks**: Always specify the language for syntax highlighting (e.g., ```python).
+- **Navigation**: Include a Table of Contents for documents exceeding 500 words.
+- **Updates**: When logic changes in code, suggest corresponding updates to the `README.md` or relevant doc files.
+- **Diagrams**: Use Mermaid.js syntax for flowcharts or architecture diagrams within markdown.

@@ -1,0 +1,11 @@
+---
+description: Exception handling and logging protocols.
+globs: **/*.py
+---
+
+# Logging and Errors
+
+- **Strict Catching**: Never use `except:`. Catch specific exceptions only.
+- **No Prints**: Use `logging` library. Default to `INFO` for flow, `ERROR` for failures.
+- **Context**: Exception messages must include state variables for debugging.
+- **Cleanup**: Ensure proper resource teardown in `finally` blocks or context managers.

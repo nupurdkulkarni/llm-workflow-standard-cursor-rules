@@ -1,0 +1,11 @@
+---
+description: Maintainability and documentation standards.
+globs: **/*.py
+---
+
+# Code Quality
+
+- **Naming**: `snake_case` for variables/functions; `PascalCase` for classes.
+- **Docstrings**: Google-style docstrings for all public members.
+- **Refactor**: Clean up debt in modified functions (Boy Scout Rule).
+- **Complexity**: Split functions exceeding 30 lines or 3 levels of nesting.

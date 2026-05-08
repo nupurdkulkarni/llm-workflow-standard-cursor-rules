@@ -1,0 +1,12 @@
+---
+description: Pytest and verification requirements.
+globs: tests/**/*.py, **/*_test.py
+---
+
+# Testing Standards
+
+- **Engine**: Use `pytest`.
+- **Pattern**: Arrange-Act-Assert.
+- **Mocking**: Use `pytest-mock` to isolate external calls/side effects.
+- **Coverage**: New logic requires at least one unit test case.
+- **Fixtures**: Centralize reusable setup in `conftest.py`.

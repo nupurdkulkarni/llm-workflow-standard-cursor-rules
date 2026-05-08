@@ -1,0 +1,14 @@
+---
+description: Project hierarchy and import rules.
+globs: 
+alwaysApply: true
+---
+
+# Project Structure
+
+- **Layout**: 
+  - `src/`: Application source.
+  - `tests/`: Pytest suite (mirroring `src/`).
+  - `rules/`: Cursor `.mdc` files.
+- **Imports**: Use absolute imports (e.g., `from src.module import x`). 
+- **Modularity**: One responsibility per file. No "God" files.

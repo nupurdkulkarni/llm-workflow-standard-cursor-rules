@@ -1,0 +1,13 @@
+---
+description: Global behavioral and logic standards.
+globs: 
+alwaysApply: true
+---
+
+# General Principles
+
+- **Clarity > Cleverness**: Prioritize readable code over complex "smart" solutions.
+- **DRY**: Check existing utils before writing new logic. No duplication.
+- **Security**: Zero hardcoded secrets/keys. Use `.env` or secure config.
+- **Ambiguity**: If a prompt is unclear, ask for clarification before writing code.
+- **Brief Responses**: Explain "why" only if unusual. No conversational filler.
