@@ -1,13 +1,27 @@
 ---
-description: Global behavioral and logic standards.
+description: Core engineering pillars and behavioral standards for global application.
 globs: 
 alwaysApply: true
 ---
 
 # General Principles
 
-- **Clarity > Cleverness**: Prioritize readable code over complex "smart" solutions.
-- **DRY**: Check existing utils before writing new logic. No duplication.
-- **Security**: Zero hardcoded secrets/keys. Use `.env` or secure config.
-- **Ambiguity**: If a prompt is unclear, ask for clarification before writing code.
-- **Brief Responses**: Explain "why" only if unusual. No conversational filler.
+- **Functionality & Clarity**: 
+  - Prioritize working, readable code over complex "clever" solutions.
+  - Aim for "Self-Documenting" code through intent-based naming.
+- **Readability & Documentation**: 
+  - Maintain a technical, objective tone without conversational fillers.
+  - Ensure all public members have Google-style docstrings.
+- **DRY & Reusability**: 
+  - Scrutinize `src/utils/` and existing modules before creating new logic to prevent duplication.
+  - Build modular, single-responsibility components to maximize reuse.
+- **Security & Compliance**: 
+  - **Zero Secrets**: Never hardcode keys; use `.env` or secure config management.
+  - Adhere to strict PEP 8 and project-defined syntax standards.
+- **Maintainability & Robustness**: 
+  - Follow the Boy Scout Rule: Leave code cleaner than you found it.
+  - Catch specific exceptions and provide debugging state in error messages.
+- **Testability**: 
+  - Design logic to be easily isolated for unit testing using the Arrange-Act-Assert pattern.
+- **Efficiency**: 
+  - Use generators for large data sets to optimize memory and avoid unnecessary allocations.

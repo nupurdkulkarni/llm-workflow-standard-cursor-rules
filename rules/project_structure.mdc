@@ -1,14 +1,28 @@
 ---
-description: Project hierarchy and import rules.
+description: Universal project hierarchy, modularity, and environment standards.
 globs: 
 alwaysApply: true
 ---
 
 # Project Structure
 
-- **Layout**: 
-  - `src/`: Application source.
-  - `tests/`: Pytest suite (mirroring `src/`).
-  - `rules/`: Cursor `.mdc` files.
-- **Imports**: Use absolute imports (e.g., `from src.module import x`). 
-- **Modularity**: One responsibility per file. No "God" files.
+- **Core Layout**: 
+  - `src/`: Root for all application source code.
+  - `tests/`: Pytest suite mirroring the `src/` directory structure.
+  - `docs/`: Technical documentation, architecture notes, and Mermaid diagrams.
+
+- **Environment & Config**:
+  - `pyproject.toml`: Single source of truth for tool config (Ruff, Pytest, Mypy).
+  - `.env.example`: Template for required environment variables; no hardcoded secrets.
+  - `.gitignore`: Must exclude `__pycache__`, `.env`, and local virtual environments.
+
+- **Modularity & Logic**:
+  - **Single Responsibility**: One responsibility per file; strictly avoid "God" files.
+  - **Domain Driven**: Group by domain (e.g., `src/auth/`, `src/api/`) rather than technical type (e.g., `models.py`).
+  - **DRY Utility**: Check `src/utils/` before creating new logic to prevent duplication.
+
+- **Imports**: 
+  - Use **absolute imports** exclusively (e.g., `from src.module.service import logic`).
+
+- **Standard Files**: 
+  - Every project must include a `README.md` that is updated whenever core logic changes.

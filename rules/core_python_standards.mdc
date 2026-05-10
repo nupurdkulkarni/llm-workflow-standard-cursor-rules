@@ -1,11 +1,25 @@
 ---
-description: Python idiom and syntax standards.
+description: Python idiom, syntax, and automated type-safety standards.
 globs: **/*.py, **/*ipynb
 ---
 
 # Core Python Standards
 
-- **Style**: Strict PEP 8. Use `black` formatting patterns.
-- **Modernity**: Use f-strings and `pathlib`. Prefer Python 3.10+ syntax (e.g., `|` for Union).
-- **Resources**: Always use `with` context managers for I/O.
-- **Efficiency**: Use generators for large data sets. Avoid unnecessary list allocations.
+- **Style & Modernity**:
+  - Strict PEP 8 adherence using `ruff` or `black` formatting patterns.
+  - Use Python 3.10+ syntax: prefer `|` for Union/Optional types and `match/case` for complex branching.
+  - Use f-strings for all string formatting and `pathlib` for all file system operations.
+
+- **Resource Management & Efficiency**:
+  - Always use `with` context managers for I/O, locks, and database connections to ensure safe teardown.
+  - Use generators and lazy evaluation for processing large datasets to minimize memory footprint.
+  - Avoid unnecessary list allocations (e.g., prefer `any()` over list comprehensions inside checks).
+
+- **Type Safety & Automated Checking**:
+  - **Static Analysis**: All code must pass `pyright` verification.
+  - **Automated Hinting**: Use tools like `monkeytype` when refactoring legacy code to ensure 100% type hint coverage.
+  - **Pydantic**: Use Pydantic v2 for data validation and settings management to ensure runtime type compliance.
+
+- **Import Standards**:
+  - Use `from typing import Self` for factory methods or classes that return their own type.
+  - Group imports into standard library, third-party, and local modules using `isort` or `ruff` patterns.

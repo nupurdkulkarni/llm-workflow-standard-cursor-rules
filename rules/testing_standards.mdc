@@ -5,8 +5,10 @@ globs: tests/**/*.py, **/*_test.py
 
 # Testing Standards
 
-- **Engine**: Use `pytest`.
-- **Pattern**: Arrange-Act-Assert.
-- **Mocking**: Use `pytest-mock` to isolate external calls/side effects.
-- **Coverage**: New logic requires at least one unit test case.
-- **Fixtures**: Centralize reusable setup in `conftest.py`.
+- **Framework**: Use `pytest`. Use `conftest.py` for shared fixtures.
+- **Pattern**: Follow **Arrange-Act-Assert (AAA)**.
+- **Isolation**: 
+  - Use `pytest-mock` to isolate external API calls or DB side effects.
+  - Prefer explicit factory functions or `factory_boy` over deep-nested fixtures.
+- **Coverage**: Every new feature or bug fix must include at least one unit or integration test.
+- **Discovery**: Before writing a test, check `tests/` for existing patterns to follow.

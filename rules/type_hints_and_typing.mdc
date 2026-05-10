@@ -5,7 +5,10 @@ globs: **/*.py, **/*.ipynb
 
 # Type Hints and Typing
 
-- **Mandatory**: All functions must have type hints for args and return.
-- **Syntax**: Use `list[str]` not `List[str]`.
-- **Validation**: Ensure type hints align with any existing Pydantic models.
-- **Self**: Use `from typing import Self` for chainable/factory methods.
+- **Mandatory**: All function signatures (args and returns) must have type hints.
+- **Modern Syntax**:
+  - Use `list[str]`, `dict[str, int]` instead of `typing.List`.
+  - Use `from typing import Self` for factory/chainable methods.
+  - Use `Literal` for string-based enums.
+- **Validation**: Align type hints with Pydantic models where applicable.
+- **Strictness**: Avoid `Any`. Use `object` or `Protocol` for structural typing if the type is truly dynamic.

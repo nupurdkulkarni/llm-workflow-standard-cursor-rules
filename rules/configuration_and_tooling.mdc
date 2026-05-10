@@ -1,0 +1,22 @@
+---
+description: Standards for project configuration, linting, and environment management.
+globs: pyproject.toml, .env*, .gitignore, ruff.toml
+alwaysApply: true
+---
+
+# Configuration and Tooling
+
+- **Centralized Config**: Use `pyproject.toml` as the single source of truth for tool settings (Ruff, Pytest, Mypy).
+- **Linter & Formatter**: 
+  - Strictly enforce `ruff` for linting and formatting.
+  - Align `ruff` rules with Google-style docstrings and PEP 8 standards.
+- **Environment Management**:
+  - **Zero Hardcoded Secrets**: All API keys and environment-specific variables must reside in `.env` files.
+  - **Template**: Maintain an `.env.example` with all required keys but no real values.
+- **Dependency Management**:
+  - Specify Python version `3.10+` in `pyproject.toml`.
+  - Use modern dependency syntax (e.g., `|` for Union types in hints).
+- **Version Control System**:
+  - Update `.gitignore` to exclude local data, vector indexes (`data/`), and virtual environments.
+  - Ensure `.env` is always ignored by version control.
+- **Task Verification**: Before completing a feature, verify that configuration changes do not break absolute import structures.
